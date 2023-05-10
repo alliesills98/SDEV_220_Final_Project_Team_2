@@ -1,0 +1,30 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="item1">  
+    <h2>New User Account Creation</h2>
+    <br/><br/>
+
+    {% if form.errors %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        There was an error with the information you entered.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    {% endif %}
+    <div class = "tab">
+    <form action="{% url 'register-user' %}" method=POST>
+        {% csrf_token %}
+     
+        {{ form.as_p }}</div>
+        <br/><br/>
+        <input type="submit"
+        value="Submit" 
+        class="btn btn-secondary">
+        
+    </form>
+
+    </div>
+</div>       
+{% endblock %}

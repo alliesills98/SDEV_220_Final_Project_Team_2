@@ -1,0 +1,19 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="item1">   
+ 
+    <h2>Rooms List</h2>
+    Click on game for more information<br/><br/>
+    
+    {% for room in room_list %}
+        <h3>
+        <a  href="{% url 'show-room' room.id %}">{{ room }}</a> 
+        </h3>
+    {% endfor %}
+    
+    </div>
+</div>     
+    
+{% endblock %}

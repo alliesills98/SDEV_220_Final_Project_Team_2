@@ -1,0 +1,14 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="item1">    
+   
+        <h2>{{ room }}</h2>        
+       
+        <ul>          
+            <li>Max Players: {{ room.max_players }}</li>
+        </ul>
+    </div>
+</div> 
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+   
+<div class="grid-container">
+    <div class="item1">
+<h2><p>
+        {%  if user.is_authenticated %}
+        Hello {{ name }}!, Welcome to Magic Corner. 
+        <br> 
+        {% endif %}
+</h2></p>
+    <h3>
+        <u>Why play at the Magic Corner?</u>
+    </h3>
+    <h5><p> 
+        The Magic Corner gives players the opportunity to play new games with other players in their community. It's a great way to meet new people!
+        Don't worry, if you've never played before we will teach you. Snacks and drinks are available for purchase during each game. 
+        We also have cards, premade decks, game books, and game accessories available for purchase in our store!
+    </p></h5>
+    <br>
+    <h3>
+        <u>How to join or add a game:</u>
+    </h3>
+    <div class = "c"> <h5><p> In our websites navigation menu, you will see a dropdown for games. 
+        Click on the dropdown and from there you can see more information on scheduled games, schedule a game, or request to join a game.
+        Just fill out the provided forms and we will let you know if there are any issues! </p></h5>
+    </div>
+    
+    <div class = "b">     <h2>
+        Here are our events for {{ month }} {{ year }}!</h2> 
+        <br/>
+    
+    
+        {% if games_list %}
+            {% for game in games_list %}
+                {{ game }} -- {{ game.game_date }} <br/>
+            {% endfor %}
+        {% else %}
+            <div class ="a"><h4>Sorry, there are no games this month. Check the Games list page for additional games coming up.</h4></div>
+        {% endif %}
+        <br>
+        <br></div>
+    </div>
+</div>
+    {% endblock %}
+
+
