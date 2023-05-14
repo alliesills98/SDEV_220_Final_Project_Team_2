@@ -1,0 +1,123 @@
+h1 a, h2 a {
+    color: #C25100;
+    font-family: 'Lobster';
+}
+
+#bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #cccccc;
+
+}
+#gd{
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid: 300px;
+    background-color: #0d0d0e;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+  }
+.page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+h1{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center;
+border-bottom-style: double;
+color: #000000;}
+
+h2{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border-bottom-style: double;
+    }
+h3,
+h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.date {
+    color: #d31b1b;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea,
+.post-form input {
+    width: 100%;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a,
+.post h2 a:visited {
+    color: #f7f3f3;
+}
+
+.post > .date,
+.post > .actions {
+    float: right;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+    color: #0a0a0a;
+    background: none;
+    border-color: #f1efed;
+}
+
+.btn-secondary:hover {
+    color: #f8f3f3;
+    background-color: #050505;
+}
+
+.navbar-custom {
+    background-color: lightgreen;
+}
+div.a {
+    border-style: solid;
+    border-color: rgb(253, 254, 255);
+  }
+div.b {
+    text-align: center;
+}
+div.tab{
+    text-align: left;
+}
+div.c {
+    border-bottom-style: double;
+}
