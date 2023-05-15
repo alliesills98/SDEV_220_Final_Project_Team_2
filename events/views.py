@@ -3,8 +3,8 @@ import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
 from django.contrib.auth.models import User
-from .models import Event, MagicCornerUser, GameRoom
-from .forms import EventFormAdmin, EventFormUser
+from .models import Event, MagicCornerUser, GameRoom, joinGame
+from .forms import EventFormAdmin, EventFormUser, joinGameForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 
@@ -83,6 +83,28 @@ def add_game(request):
     
     return render(request, 'events/add_game.html',
                   {'form':form})
+
+#page for users to join game
+def join_game(request):
+    submitted = False
+    #validate if form is submitted to post to database
+    if request.method == "POST":
+        form = joinGameForm(request.POST)
+        if form.is_valid():
+            joinGame = form.save(commit=False)
+            joinGame.player = request.user
+            joinGame.save()
+            return HttpResponseRedirect('/join_game?submitted=True')
+    
+    else:
+        form = joinGameForm
+        if 'submitted' in request.GET:
+            submitted = True
+    
+    return render(request, 'events/join_game.html',
+                  {'form':form})
+
+
 
 #page to edit/update games
 def update_game(request, game_id):

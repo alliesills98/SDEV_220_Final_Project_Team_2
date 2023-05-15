@@ -13,9 +13,9 @@
         <a  href="{% url 'show-game' game.id %}">{{ game }}</a>
         <ul>
             
-            <li>Date & Time: {{ game.game_date }}</li>
-            <li>Room #: {{ game.game_room }}</li>
-            <li>Hosted By: {{ game.table_host }}</li>
+            <ul>Date & Time: {{ game.game_date }}</ul>
+            <ul>Room #: {{ game.game_room }}</ul>
+            <ul>Hosted By: {{ game.table_host }}</ul>
         </ul>
         {%  if user.is_authenticated %}
              {% if user == game.table_host %}   

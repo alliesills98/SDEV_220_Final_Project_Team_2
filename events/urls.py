@@ -9,6 +9,7 @@ urlpatterns = [
 
     #games
     path('add_game/',views.add_game,name="add-game"),
+    path('join_game/',views.join_game, name = "join-game"),
     path('search_games/',views.search_games,name="search-games"),
     path('games/', views.all_games, name="list-games"),
     path('show_game/<game_id>', views.show_game, name="show-game"),

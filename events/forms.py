@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Event
+from .models import Event, joinGame
 
 
 
@@ -42,4 +42,14 @@ class EventFormUser(ModelForm):
             'game_date': forms.TextInput(attrs={'class': 'form-control','placeholder':'YYYY-MM-DD HH:MM:SS'}),
             'game_room': forms.Select(attrs={'class': 'form-select','placeholder':'Game Room'}),
             'game_description': forms.Textarea(attrs={'class': 'form-control','placeholder':'Game Description'}),
+        }
+class joinGameForm(ModelForm):
+    class Meta:
+        model = joinGame
+        fields = ('game_name',)
+        labels = {
+            'game_name':'Game Name',
+        }
+        widgets = {
+            'game_name': forms.Select(attrs={'class': 'form-select', 'placeholder':'Game Name'}),
         }

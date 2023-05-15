@@ -10,15 +10,15 @@
        
         <ul>
             
-            <li>Date & Time: {{ game.game_date }}</li>
-            <li>Room #: {{ game.game_room }}</li>
-            <li>Hosted By: {{ game.table_host }}</li>
-            <li>Description: {{ game.game_description }}</li>
-            <li>Max Players: {{ game.game_room.max_players }}</li>
-            <li>Players Attending: <br/>
+            <ul>Date & Time: {{ game.game_date }}</ul>
+            <ul>Room #: {{ game.game_room }}</ul>
+            <ul>Hosted By: {{ game.table_host }}</ul>
+            <ul>Description: {{ game.game_description }}</ul>
+            <ul>Max Players: {{ game.game_room.max_players }}</ul>
+            <ul>Players Attending: <br/>
             {% for player in game.players.all %}
                 {{ player }} <br/>
-            </li>
+            </ul>
         </ul>
     {% endfor %}
     </div>

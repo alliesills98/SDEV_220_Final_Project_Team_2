@@ -12,7 +12,6 @@ class MagicCornerUser(models.Model):
 class GameRoom(models.Model):
     room_name = models.CharField('Room Name', max_length=30, blank=True)
     max_players = models.IntegerField('Max Players')
-    
 
     def __str__(self):
         return str(self.room_name)
@@ -23,8 +22,11 @@ class Event(models.Model):
     game_room = models.ForeignKey(GameRoom, blank=True, null=True, on_delete=models.CASCADE)
     table_host = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     game_description = models.TextField(blank=True)
-    players = models.ManyToManyField(MagicCornerUser, blank=True)
+    player = models.ManyToManyField(MagicCornerUser, blank=True)
 
     def __str__(self):
         return self.game_name
+class joinGame(models.Model):
+    game_name = models.ForeignKey(Event, blank = True, null=True, on_delete=models.SET_NULL)
+    player = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     
