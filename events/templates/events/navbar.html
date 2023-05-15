@@ -16,6 +16,7 @@
               <li><a class="dropdown-item" href="{% url 'list-games' %}">View Scheduled Games</a></li>
               {%  if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'add-game' %}">Schedule Game</a></li>
+                <li></li><a class = "dropdown-item" href="{% url 'join-game'%}">Join Game<a></li>
               {% endif %}
             </ul>
           </li>
